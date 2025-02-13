@@ -14,7 +14,7 @@ class App extends Component {
     };
 
     buttonClickHandler() {
-   
+        this.setState({renderBall : true});
    }
     renderBallOrButton() {
 		if (this.state.renderBall) {
@@ -22,6 +22,18 @@ class App extends Component {
 		} else {
 		    return <button onClick={this.buttonClickHandler} >Start</button>
 		}
+    }
+
+    handleArrowRight = (event) => {
+        if(event.key === "ArrowRight" || event.keyCode === 39){
+            const currentLeft = parseInt(this.state.ballPosition.left);
+
+            const newLeft = currentLeft + 5;
+
+            this.setState({
+                ballPosition : { left : `${newLeft}px`}
+            });
+        }
     }
 
     // bind ArrowRight keydown event
