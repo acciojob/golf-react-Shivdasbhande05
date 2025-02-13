@@ -25,7 +25,7 @@ class App extends Component {
     }
   }
 
-  handleArrowRight = (event) => {
+  handleArrowRight(event){
     if (event.key === "ArrowRight" || event.keyCode === 39) {
       const currentLeft = parseInt(this.state.ballPosition.left);
 
