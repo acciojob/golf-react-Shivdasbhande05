@@ -16,6 +16,7 @@ class App extends Component {
   buttonClickHandler() {
     this.setState({ renderBall: true });
   }
+  
   renderBallOrButton() {
     if (this.state.renderBall) {
       return <div className="ball" style={this.state.ballPosition}></div>;
@@ -31,7 +32,7 @@ class App extends Component {
       const newLeft = currentLeft + 5;
 
       this.setState({
-        ballPosition: { left : `"${newLeft}px"` },
+        ballPosition: { left : `${newLeft}px` },
       });
     }
   };
